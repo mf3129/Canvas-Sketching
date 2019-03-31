@@ -17,6 +17,7 @@ class Canvas: UIView {
         guard let context = UIGraphicsGetCurrentContext() else
         {return}
         
+        //Line to be drawn
         let startingPoint = CGPoint(x: 0, y: 0)
         let endingPoint = CGPoint(x: 100, y: 100)
         
@@ -25,6 +26,13 @@ class Canvas: UIView {
         
         context.strokePath()
         
+    }
+    
+    //Tracking the first finger touch
+    override func touchesMoved(_ touches: Set<UITouch>, with: UIEvent?) {
+        guard let point = touches.first?.location(in: nil) else
+        {return}
+        print(point)
     }
     
     
@@ -38,7 +46,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(canvas)
-        canvas.backgroundColor = .white 
+        canvas.backgroundColor = .white
         canvas.frame = view.frame
     }
 
