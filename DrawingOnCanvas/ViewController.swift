@@ -29,6 +29,10 @@ class Canvas: UIView {
 //        context.move(to: startingPoint)
 //        context.addLine(to: endingPoint)
         
+        //Defning Properites Of The Line
+        context.setStrokeColor(UIColor.blue.cgColor)
+        context.setLineWidth(10)
+        context.setLineCap(.butt)
         
         for (i, firstPoint) in line.enumerated() {
             if i == 0 {
@@ -43,8 +47,8 @@ class Canvas: UIView {
     }
     
     
-    
     var line = [CGPoint]()
+    
     
     //Tracking the first finger touch
     override func touchesMoved(_ touches: Set<UITouch>, with: UIEvent?) {
