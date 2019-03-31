@@ -34,11 +34,13 @@ class Canvas: UIView {
         context.setLineWidth(10)
         context.setLineCap(.butt)
         
-        for (i, firstPoint) in line.enumerated() {
-            if i == 0 {
-                context.move(to: firstPoint)
-            } else {
-                context.addLine(to: firstPoint)
+        lines.forEach { (line) in
+            for (i, firstPoint) in line.enumerated() {
+                if i == 0 {
+                    context.move(to: firstPoint)
+                } else {
+                    context.addLine(to: firstPoint)
+                }
             }
         }
         
@@ -47,7 +49,11 @@ class Canvas: UIView {
     }
     
     
-    var line = [CGPoint]()
+    var lines = [[CGPoint]]()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lines.append([CGPoint]()) //Adding a new line to the lines array when a new touch is detected.
+    }
     
     
     //Tracking the first finger touch
@@ -55,7 +61,13 @@ class Canvas: UIView {
         guard let point = touches.first?.location(in: nil) else
         {return}
         //print(point)
-        line.append(point)
+        
+        guard var lastLine = lines.popLast() else {return}
+        lastLine.append(point)
+        lines.append(lastLine)
+
+        
+        //line.append(point)
         
         setNeedsDisplay()
     }
