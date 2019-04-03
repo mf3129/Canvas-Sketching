@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .yellow
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
     
@@ -54,6 +55,7 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .red
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
     
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .blue
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
     
@@ -68,6 +71,7 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .green
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
     
@@ -75,8 +79,21 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .purple
         button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
         return button
     }()
+    
+    //Slider for VC
+    let slider: UISlider = {
+        let slider = UISlider()
+        slider.minimumValue = 1
+        slider.maximumValue = 10
+        return slider
+    }()
+    
+    @objc fileprivate func changeColor(button: UIButton) {
+        canvas.setStrokeColor(color: button.backgroundColor ?? .black)
+    }
     
     
     //View Loading Functions
@@ -100,14 +117,15 @@ class ViewController: UIViewController {
         
         colorStackView.distribution = .fillEqually
         
-        let stackView = UIStackView(arrangedSubviews: [undoButton, colorStackView, clearButton])
+        let stackView = UIStackView(arrangedSubviews: [undoButton, colorStackView, slider, clearButton])
         
+        stackView.spacing = 12
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
     }
 
 
