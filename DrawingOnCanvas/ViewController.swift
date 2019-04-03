@@ -83,6 +83,14 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let grayButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .gray
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
+        return button
+    }()
+    
     //Slider for VC
     let slider: UISlider = {
         let slider = UISlider()
@@ -97,7 +105,7 @@ class ViewController: UIViewController {
     }
     
     @objc fileprivate func changeColor(button: UIButton) {
-        canvas.setStrokeColor(color: button.backgroundColor ?? .black)
+        canvas.setStrokeColor(color: button.backgroundColor ?? .blue)
     }
     
     
@@ -110,7 +118,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        canvas.backgroundColor = .white
+        canvas.backgroundColor = .black
         
         buttonLayout()
     }
@@ -118,7 +126,7 @@ class ViewController: UIViewController {
     
     fileprivate func buttonLayout() {
         
-        let colorStackView = UIStackView(arrangedSubviews: [yellowButton, redButton, blueButton, greenButton, purpleButton])
+        let colorStackView = UIStackView(arrangedSubviews: [yellowButton, redButton, blueButton, greenButton, purpleButton, grayButton])
         
         colorStackView.distribution = .fillEqually
         
