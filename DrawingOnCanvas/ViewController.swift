@@ -88,8 +88,13 @@ class ViewController: UIViewController {
         let slider = UISlider()
         slider.minimumValue = 1
         slider.maximumValue = 10
+        slider.addTarget(self, action: #selector(controlSliderChange), for: .valueChanged)
         return slider
     }()
+    
+    @objc fileprivate func controlSliderChange() {
+        canvas.setStrokeWidth(width: slider.value)
+    }
     
     @objc fileprivate func changeColor(button: UIButton) {
         canvas.setStrokeColor(color: button.backgroundColor ?? .black)
