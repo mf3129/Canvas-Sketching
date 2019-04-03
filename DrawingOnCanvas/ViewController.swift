@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     
     let canvas = Canvas()
     
-    //Public Functions
+    //Buttons for VC
+  
     let undoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Undo", for: .normal)
@@ -42,11 +43,42 @@ class ViewController: UIViewController {
         canvas.clear()
     }
     
+    let yellowButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .yellow
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    let redButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    let blueButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .blue
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    let greenButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .green
+        button.layer.borderWidth = 1
+        return button
+    }()
+    
+    let purpleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .purple
+        button.layer.borderWidth = 1
+        return button
+    }()
     
     
-    
-    
-
     //View Loading Functions
     override func loadView() {
         self.view = canvas  //Setting the view equal to the canvas view.
@@ -63,7 +95,12 @@ class ViewController: UIViewController {
     
     
     fileprivate func buttonLayout() {
-        let stackView = UIStackView(arrangedSubviews: [undoButton, clearButton])
+        
+        let colorStackView = UIStackView(arrangedSubviews: [yellowButton, redButton, blueButton, greenButton, purpleButton])
+        
+        colorStackView.distribution = .fillEqually
+        
+        let stackView = UIStackView(arrangedSubviews: [undoButton, colorStackView, clearButton])
         
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
