@@ -3,7 +3,7 @@
 
 A sketching app for iOS. App was made programmatically without storyboard. Enjoy! 
 
-<img width = "275" height="500"  alt="Screen Shot 2019-04-03 at 21 38 11" src="https://user-images.githubusercontent.com/43025563/55523837-d4465280-5658-11e9-96b3-dbd7ed2008e0.png"><img width = "275" height="500"  alt="Screen Shot 2019-04-03 at 21 15 22" src="https://user-images.githubusercontent.com/43025563/55523291-6bf67180-5656-11e9-9703-0ea1339ebd09.png"><img width = "275" height="500"  alt="Screen Shot 2019-04-03 at 21 15 43" src="https://user-images.githubusercontent.com/43025563/55523290-6bf67180-5656-11e9-932b-579c2587bc4f.png">
+<img width = "275" height="550"  alt="Screen Shot 2019-04-03 at 21 38 11" src="https://user-images.githubusercontent.com/43025563/55523837-d4465280-5658-11e9-96b3-dbd7ed2008e0.png"><img width = "275" height="550"  alt="Screen Shot 2019-04-03 at 21 15 22" src="https://user-images.githubusercontent.com/43025563/55523291-6bf67180-5656-11e9-9703-0ea1339ebd09.png"><img width = "275" height="550"  alt="Screen Shot 2019-04-03 at 21 15 43" src="https://user-images.githubusercontent.com/43025563/55523290-6bf67180-5656-11e9-932b-579c2587bc4f.png">
 
 
 
