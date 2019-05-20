@@ -23,7 +23,7 @@ Steps to run the 📱 app:
 
 OR download the zip file
 
-4. Double click the file "DrawingOnCanvas.xcodeproj"
+4. Double click the file "DrawingOnCanvas.xcodeproj" and accept the terms. 
 5. Press two keys simultaneously CMD + R to run the app
 
 
